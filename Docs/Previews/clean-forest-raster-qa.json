@@ -1,0 +1,50 @@
+[
+  {
+    "file": "Far.png",
+    "size": [
+      1672,
+      941
+    ],
+    "mode": "RGB",
+    "alphaRange": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "Middle.png",
+    "size": [
+      1672,
+      941
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "TerrainWide.png",
+    "size": [
+      1604,
+      980
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "Props.png",
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      255
+    ]
+  }
+]

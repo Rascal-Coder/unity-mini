@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "date": "2026-10-12",
+  "tool": "Built-in image_gen.imagegen",
+  "approval": "User requested complete redraw; final selection by agent, pending user visual review",
+  "style": "简洁大气的手绘奇幻森林；大轮廓、分块明暗、少量宽笔触；不使用颗粒、碎叶或密集裂纹",
+  "engine": "Tuanjie 2022.3.62t16 / Unity 2022.3",
+  "import": {
+    "pivot": [
+      0.5,
+      0
+    ],
+    "pixelsPerUnit": 100,
+    "filter": "Bilinear",
+    "mipmaps": false,
+    "maxSize": 2048,
+    "desktop": "BC7",
+    "mobile": "ASTC_6x6"
+  },
+  "assets": [
+    {
+      "name": "Far",
+      "path": "Assets/Resources/Battle/Art/Handpainted/Far.png",
+      "alpha": false,
+      "role": "sky, mountains and distant forest",
+      "collision": false,
+      "source": "exec-3355e07c-5009-4099-a9ad-78d11d288efa.png",
+      "prompt": "ART DIRECTION FOR THE ENTIRE COHESIVE ASSET FAMILY: clean, spacious, hand-drawn 2D fantasy game environment, like a polished classic animation background. Bold irregular dark COLORED contour lines. Exaggerated chunky shapes. Model volume with only 3-5 broad coherent painted light/midtone/shadow regions per object, with delicate wide brush blending inside these regions. Very subtle broad brush strokes ONLY in selected areas. Clean opaque interiors, clean antialiased silhouettes. The hand-painted feel comes from intentional shapes and edges, NOT texture noise. Absolutely no grain, no canvas/paper texture, no stippling, no tiny flecks, no fractal leaves, no fine crack networks, no photographic textures, no 3D render, no dense detailing. Also NOT primitive flat vector clipart or single solid color fills: large carefully painted planes and restrained soft shade give real weight. Think FEWER, LARGER visual shapes with tremendous readability at game scale. Magical teal forest; distant pale blue-lavender, ruins grey-violet/blue, moss desaturated sage, near stone softly warm grey, cyan rune accents. Light from upper left. Reference image is the composition reference only; redraw all surfaces in this cleaner new style. No UI/text/characters.\nMake ONLY a far landscape game layer, opaque full bleed, 1672x941 wide. Three or four broad pale blue-violet mountain silhouettes under a pale blue sky with 5-7 large soft cream cloud masses. Very low contrast in the far mountains, no dark contours in distance. Large soft fog ribbons and only a few grouped distant treetops at bottom, simplified into canopy masses, never individual tiny trees or leaves. Horizon peaks about one-third down image; lower half muted hazy forest mass. Grand spacious distance. No ruins, no gateways, no large trees, no battlefield, no props. The far layer is deliberately the most quiet and least detailed of the whole set."
+    },
+    {
+      "name": "Middle",
+      "path": "Assets/Resources/Battle/Art/Handpainted/Middle.png",
+      "alpha": true,
+      "role": "giant trees, monumental ruins, bridge and falls",
+      "collision": false,
+      "source": "exec-5ce9482e-3485-4a9d-95a7-1d689150accb.png",
+      "prompt": "ART DIRECTION FOR THE ENTIRE COHESIVE ASSET FAMILY: clean, spacious, hand-drawn 2D fantasy game environment, like a polished classic animation background. Bold irregular dark COLORED contour lines. Exaggerated chunky shapes. Model volume with only 3-5 broad coherent painted light/midtone/shadow regions per object, with delicate wide brush blending inside these regions. Very subtle broad brush strokes ONLY in selected areas. Clean opaque interiors, clean antialiased silhouettes. The hand-painted feel comes from intentional shapes and edges, NOT texture noise. Absolutely no grain, no canvas/paper texture, no stippling, no tiny flecks, no fractal leaves, no fine crack networks, no photographic textures, no 3D render, no dense detailing. Also NOT primitive flat vector clipart or single solid color fills: large carefully painted planes and restrained soft shade give real weight. Think FEWER, LARGER visual shapes with tremendous readability at game scale. Magical teal forest; distant pale blue-lavender, ruins grey-violet/blue, moss desaturated sage, near stone softly warm grey, cyan rune accents. Light from upper left. Reference image is the composition reference only; redraw all surfaces in this cleaner new style. No UI/text/characters.\nMake ONLY an independent transparent MIDDLE DISTANCE layer, wide1672x941. Actual alpha in sky, no fake checkerboard. Broad U-shaped composition: two huge fantastical tree trunks at far left/right with tree crowns drawn as only 6-10 large softly faceted rounded canopy clumps per tree; absolutely NO individual leaves or bark grain. Center low-mid: a monumental ancient rune gateway made of a few HUGE chunky stylized curved stone segments with exaggerated beveled silhouettes and clear deep shadow planes, reaching y=38%. Two massive broken monoliths/arches at side thirds, mostly empty sky above. One low bridge of 3 large arches spanning bottom third, muted teal forest masses and 2 broad ribbon-like painted waterfalls below. A few large vines only, sparse moss caps painted as broad graphic brush shapes. Medium-low contrast, restrained cool greys and teal with subdued cyan center rune. Lower band coherent with irregular clean silhouette. Base of scenery around y=92%, no painted sky, mountains, near ground, near crystals or small plants. This is a simplified epic hand-painted fantasy ruin backdrop with strong sculptural shapes, not a detailed botanical or stone study."
+    },
+    {
+      "name": "TerrainWide",
+      "path": "Assets/Resources/Battle/Art/Handpainted/TerrainWide.png",
+      "alpha": true,
+      "role": "wide walkable plane and deep rock face; actors use formation coordinates, not sprite collision",
+      "collision": false,
+      "source": "exec-a536a11f-4a08-49f2-9666-88960417d76c.png",
+      "prompt": "ART DIRECTION FOR THE ENTIRE COHESIVE ASSET FAMILY: clean, spacious, hand-drawn 2D fantasy game environment, like a polished classic animation background. Bold irregular dark COLORED contour lines. Exaggerated chunky shapes. Model volume with only 3-5 broad coherent painted light/midtone/shadow regions per object, with delicate wide brush blending inside these regions. Very subtle broad brush strokes ONLY in selected areas. Clean opaque interiors, clean antialiased silhouettes. The hand-painted feel comes from intentional shapes and edges, NOT texture noise. Absolutely no grain, no canvas/paper texture, no stippling, no tiny flecks, no fractal leaves, no fine crack networks, no photographic textures, no 3D render, no dense detailing. Also NOT primitive flat vector clipart or single solid color fills: large carefully painted planes and restrained soft shade give real weight. Think FEWER, LARGER visual shapes with tremendous readability at game scale. Magical teal forest; distant pale blue-lavender, ruins grey-violet/blue, moss desaturated sage, near stone softly warm grey, cyan rune accents. Light from upper left. Reference image is the composition reference only; redraw all surfaces in this cleaner new style. No UI/text/characters.\nEDIT TARGET Image 1: KEEP EXACT geometry and opaque coverage of the original terrain in image 1. Restyle it using image 2 as STYLE ONLY. Image 1 has correct rear ridge around 18% image height and floorfront around 53%. Image2 has WRONG geometry; do NOT copy its narrow floor or enormous transparent sky. Output1604x980 actual transparent alpha. Absolutely preserve Image1's BROAD EMPTY WALKABLE STONE TOP occupying y=18%-53% and the TALL VERTICAL CLIFF from53%-100%, extending to all3bottom/sideedges. It is a broad square courtyard in perspective, NOT a thin side-scroller ledge. Redraw with only 20-25 large slabs total and 10-12 enormous cliff rocks. Stylized thick colored contours and broad painted planes. No fine texture or leaf speckles. Low small boulders behind terrace, no tall boulders. Only sparse broad moss shapes and two flowing roots on cliff. No props or scenery. Reduce detailed noise by95%. The quiet broad top plane is critical for gameplay. Preserve full canvas dimensions and terrain silhouette placement of Image1."
+    },
+    {
+      "name": "Props",
+      "path": "Assets/Resources/Battle/Art/Handpainted/Props.png",
+      "alpha": true,
+      "role": "7 independent sprites: Runestone, Crystal, MoonBush, Mushrooms, RootLeft, RootRight, TrainingDummy",
+      "collision": false,
+      "source": "exec-f3894e01-4a75-4888-b14e-ba81d5e10f63.png",
+      "prompt": "ART DIRECTION FOR THE ENTIRE COHESIVE ASSET FAMILY: clean, spacious, hand-drawn 2D fantasy game environment, like a polished classic animation background. Bold irregular dark COLORED contour lines. Exaggerated chunky shapes. Model volume with only 3-5 broad coherent painted light/midtone/shadow regions per object, with delicate wide brush blending inside these regions. Very subtle broad brush strokes ONLY in selected areas. Clean opaque interiors, clean antialiased silhouettes. The hand-painted feel comes from intentional shapes and edges, NOT texture noise. Absolutely no grain, no canvas/paper texture, no stippling, no tiny flecks, no fractal leaves, no fine crack networks, no photographic textures, no 3D render, no dense detailing. Also NOT primitive flat vector clipart or single solid color fills: large carefully painted planes and restrained soft shade give real weight. Think FEWER, LARGER visual shapes with tremendous readability at game scale. Magical teal forest; distant pale blue-lavender, ruins grey-violet/blue, moss desaturated sage, near stone softly warm grey, cyan rune accents. Light from upper left. Reference image is the composition reference only; redraw all surfaces in this cleaner new style. No UI/text/characters.\nGenerate a production PROP SPRITE SHEET, transparent alpha, wide 2048x1024, EXACTLY eight separate cells in a uniform 4-column x 2-row grid. No drawn grid, each sprite isolated in its cell with 40px transparent margin, no overlap or cropping. All sprites side/front three-quarter view as companion props for reference forest scene, same clean broad painted shapes. Top row from left to right: (1) a single chunky blue-grey broken ancient Runestone with large subtle cyan diamond rune and 2 broad sage moss caps; (2) cluster of THREE large blue-violet/cyan crystals emerging from ONE low broad rock base, clear planar facets; (3) a low MoonBush of 6-8 LARGE smooth teal leaves and exactly 3 pale blue bell flowers, NO tiny speckled foliage; (4) a cluster of THREE large indigo fantasy mushrooms with broad blue highlights, NO spotted cap patterns. Bottom row: (1) broad gnarled LEFT foreground tree root sweep, trunk on left with chunky sinuous roots sweeping to right and small mass of teal leaves, low wide silhouette; (2) RIGHT foreground tree root sweep trunk on right with roots sweeping to left, distinct matching root design; (3) wooden training dummy on a sturdy central post with simple burlap head, two small crossed stub arms and round wooden torso shield carrying a simple cyan diamond emblem, no text; (4) EMPTY TRANSPARENT. NO background, no scenery, no cast shadow rectangles, no labels. Design each sprite to read at only150-300px in-game; simplify detail. Bold dark blue contours, 3-5 painted shade masses, precise clean antialiased alpha, NO grain or scratches, NO green/purple noisy fringes. No isolated texture specks. Volume and personality from hand-drawn shapes. Preserve this low-detail style throughout ALL sprites."
+    }
+  ],
+  "provenance": "AI-generated for this project via built-in image generation; references are project-generated artwork and user-supplied composition references. No third-party game image pixels copied. Original PNG files preserved unchanged; sprite rectangles only normalized with Pillow. Existing Spine characters and contact shadow retained."
+}

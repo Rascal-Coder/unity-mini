@@ -1,0 +1,1 @@
+PASS: sprite sheet imports, scene bake, 16 formation anchors, actual engine renders at 1920x572; single hero and six-actor layout.

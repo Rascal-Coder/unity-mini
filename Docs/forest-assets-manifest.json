@@ -1,0 +1,61 @@
+{
+  "tool": "OpenAI image_gen.imagegen",
+  "generation_date": "2026-10-12",
+  "sources": {
+    "Background": "exec-d3e38be5-64a3-4627-8f44-cb1f74651348.png",
+    "Trees": "exec-e1f19e51-319c-45cf-ae90-4f01b0ad939c.png",
+    "Vegetation": "exec-6a466360-cb25-4594-a6d3-536c79021e7f.png",
+    "Tileset": "exec-f99752cc-8afd-4a0a-b639-85d1f749be03.png"
+  },
+  "files": [
+    {
+      "file": "Background.jpg",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 226289,
+      "sprites": 1,
+      "compression": "JPEG quality 90, full chroma"
+    },
+    {
+      "file": "Trees.png",
+      "dimensions": [
+        1280,
+        768
+      ],
+      "bytes": 1093755,
+      "sprites": 2,
+      "compression": "lossless RGBA PNG"
+    },
+    {
+      "file": "Vegetation.png",
+      "dimensions": [
+        768,
+        512
+      ],
+      "bytes": 412716,
+      "sprites": 6,
+      "compression": "lossless RGBA PNG"
+    },
+    {
+      "file": "Tileset.png",
+      "dimensions": [
+        1560,
+        400
+      ],
+      "bytes": 873298,
+      "sprites": 6,
+      "compression": "lossless RGBA PNG"
+    }
+  ],
+  "total_bytes": 2606058,
+  "source_bytes": 8098311,
+  "view": "shallow elevated 3/4 ground, multirow battlefield",
+  "references": [
+    "https://marketplace.unity.com/packages/2d/environments/2d-hand-painted-platformer-environment-227159",
+    "https://learn.unity.com/project/2d-game-kit?uv=2020.2"
+  ],
+  "rights": "Generated for this project. Community packs are structural references, no third-party pack art copied.",
+  "note": "Ground panels assemble in named row/column order; not claimed seamless repeatable tiles. PNG compression is lossless after resizing. Background JPEG is lossy."
+}

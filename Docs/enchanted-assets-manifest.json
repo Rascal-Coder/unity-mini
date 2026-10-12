@@ -1,0 +1,50 @@
+{
+  "tool": "OpenAI image_gen.imagegen",
+  "generation_date": "2026-10-12",
+  "sources": {
+    "Background": "exec-d0420b82-2b93-4cc1-9557-696bc5a5a271.png",
+    "Vegetation": "exec-6c1486ee-ccdb-45ff-9ec2-ceb60a382cbb.png",
+    "Tileset": "exec-02b293df-dad1-4bc0-83d7-1e977fa2f3d9.png"
+  },
+  "files": [
+    {
+      "file": "Background.jpg",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 379868,
+      "sprites": 1,
+      "compression": "JPEG quality 90, full chroma"
+    },
+    {
+      "file": "Vegetation.png",
+      "dimensions": [
+        1152,
+        768
+      ],
+      "bytes": 1104439,
+      "sprites": 6,
+      "compression": "lossless RGBA PNG"
+    },
+    {
+      "file": "Tileset.png",
+      "dimensions": [
+        1560,
+        400
+      ],
+      "bytes": 916138,
+      "sprites": 6,
+      "compression": "lossless RGBA PNG"
+    }
+  ],
+  "total_bytes": 2400445,
+  "source_bytes": 6987092,
+  "view": "shallow elevated 3/4 ground, multirow battlefield",
+  "references": [
+    "https://marketplace.unity.com/packages/2d/environments/2d-hand-painted-platformer-environment-227159",
+    "https://learn.unity.com/project/2d-game-kit?uv=2020.2"
+  ],
+  "rights": "Generated for this project. Community packs are structural references, no third-party pack art copied.",
+  "note": "Ground panels assemble in named row/column order; not claimed seamless repeatable tiles. PNG compression is lossless after resizing. Background JPEG is lossy."
+}

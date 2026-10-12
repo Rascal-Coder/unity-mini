@@ -1,0 +1,22 @@
+{
+  "sprites": [
+    {
+      "name": "Oak",
+      "x": 8,
+      "y": 65,
+      "width": 624,
+      "height": 695,
+      "pivotX": 0.5,
+      "pivotY": 0
+    },
+    {
+      "name": "Birch",
+      "x": 648,
+      "y": 8,
+      "width": 483,
+      "height": 752,
+      "pivotX": 0.5,
+      "pivotY": 0
+    }
+  ]
+}

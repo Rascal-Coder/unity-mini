@@ -1,0 +1,58 @@
+{
+  "sprites": [
+    {
+      "name": "Runestone",
+      "x": 8,
+      "y": 392,
+      "width": 367,
+      "height": 368,
+      "pivotX": 0.5,
+      "pivotY": 0
+    },
+    {
+      "name": "MoonBush",
+      "x": 392,
+      "y": 472,
+      "width": 368,
+      "height": 288,
+      "pivotX": 0.5,
+      "pivotY": 0
+    },
+    {
+      "name": "Crystal",
+      "x": 776,
+      "y": 395,
+      "width": 363,
+      "height": 365,
+      "pivotX": 0.5,
+      "pivotY": 0
+    },
+    {
+      "name": "RootLeft",
+      "x": 8,
+      "y": 48,
+      "width": 368,
+      "height": 328,
+      "pivotX": 0.5,
+      "pivotY": 0
+    },
+    {
+      "name": "RootRight",
+      "x": 392,
+      "y": 76,
+      "width": 368,
+      "height": 300,
+      "pivotX": 0.5,
+      "pivotY": 0
+    },
+    {
+      "name": "Mushrooms",
+      "x": 776,
+      "y": 165,
+      "width": 368,
+      "height": 211,
+      "pivotX": 0.5,
+      "pivotY": 0
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+2026-10-12 16:02:37 [26840] Failed to mount fridge (error 0xffff)
+2026-10-12 16:02:37 [26840] Failed to remount user fridge (error 0xffff)
+2026-10-12 16:02:37 [26840] Disabling fingerprint due disabled storage
+2026-10-12 16:02:37 [26840] Fridge is not supported in this machine
+2026-10-12 16:02:37 [26840] Failure in adding the v2c available in license file '1045383518978896661_provisional.v2c' (error 0x7000002b)
+2026-10-12 16:02:37 [26840] Fridge is not supported in this machine
+2026-10-12 16:02:37 [26840] Failure in adding the v2c available in license file '1056313112475149680_provisional.v2c' (error 0x7000002b)
+2026-10-12 16:02:37 [26840] Fridge is not supported in this machine
+2026-10-12 16:02:37 [26840] Failure in adding the v2c available in license file '1071653311535565013_provisional.v2c' (error 0x7000002b)
