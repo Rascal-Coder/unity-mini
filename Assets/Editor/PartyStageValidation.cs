@@ -19,14 +19,14 @@ public static class PartyStageValidation {
     static int initialWave;
     static readonly System.Collections.Generic.List<string> errors = new System.Collections.Generic.List<string>();
 
-    [MenuItem("Dice Hero/Validate Four Layer Party Stage")]
+    [MenuItem("Expedition/Validate Four Layer Party Stage")]
     public static void Run() {
         try {
             Directory.CreateDirectory("Docs/Previews");
             AssetDatabase.Refresh();
             BattleProjectSetup.BakeStage();
             RenderStatic();
-            EditorSceneManager.OpenScene("Assets/Scenes/DiceTraining.unity");
+            EditorSceneManager.OpenScene("Assets/Scenes/Battle.unity");
             File.WriteAllText(Report, "Static PASS: 4 groups; 16 anchors; rear props behind terrain; 3 Spine heroes; parallax coefficients verified.\nGrounding PASS: boot attachments stay on the floor across idle, run, attack and skill cycles for all 3 roles; shadows remain behind actors.\n");
             SessionState.SetBool(RunningKey, true);
             EditorApplication.isPlaying = true;
@@ -45,7 +45,7 @@ public static class PartyStageValidation {
     static void Tick() {
         try {
             if (!EditorApplication.isPlaying) return;
-            var game = UnityEngine.Object.FindObjectOfType<DiceBattle>();
+            var game = UnityEngine.Object.FindObjectOfType<PartyBattle>();
             if (game == null || !game.IsReady) {
                 if (EditorApplication.timeSinceStartup - started > 40) throw new Exception("Party runtime did not initialize.");
                 return;
@@ -136,7 +136,7 @@ public static class PartyStageValidation {
         } finally { EditorSceneManager.ClosePreviewScene(preview); }
         AssetDatabase.Refresh();
     }
-    static void RenderRuntime(DiceBattle game, int width, int height, string name) {
+    static void RenderRuntime(PartyBattle game, int width, int height, string name) {
         var canvas = game.Hud.GetComponent<Canvas>(); var camera = Camera.main;
         var priorMode = canvas.renderMode; var priorCamera = canvas.worldCamera; float priorSize = camera.orthographicSize;
         var priorMin = game.Hud.Root.anchorMin; var priorMax = game.Hud.Root.anchorMax;

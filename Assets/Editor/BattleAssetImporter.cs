@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 
 public sealed class BattleAssetImporter : AssetPostprocessor {
-    public override uint GetVersion(){return 7;}
+    public override uint GetVersion(){return 8;}
     [Serializable] sealed class SliceFile { public Slice[] sprites; }
     [Serializable] sealed class Slice { public string name; public int x,y,width,height; public float pivotX,pivotY; }
     void OnPreprocessTexture() {
@@ -20,7 +20,7 @@ public sealed class BattleAssetImporter : AssetPostprocessor {
         importer.filterMode=FilterMode.Bilinear;importer.textureCompression=TextureImporterCompression.Uncompressed;importer.wrapMode=TextureWrapMode.Clamp;
         foreach(string platform in new[]{"Standalone","Android","iPhone","WebGL"})importer.ClearPlatformTextureSettings(platform);
         if(assetPath.EndsWith("ContactShadow.png")){settings.spritePivot=new Vector2(.5f,.5f);importer.SetTextureSettings(settings);}
-        if(assetPath.Contains("/Forest/")||assetPath.Contains("/Enchanted/")||assetPath.Contains("/Layered/")||assetPath.Contains("/Handpainted/")) {
+        if(assetPath.Contains("/Maps/")||assetPath.Contains("/Forest/")||assetPath.Contains("/Enchanted/")||assetPath.Contains("/Layered/")||assetPath.Contains("/Handpainted/")) {
             importer.maxTextureSize=2048;importer.isReadable=false;
             importer.textureCompression=TextureImporterCompression.CompressedHQ;
             importer.compressionQuality=100;

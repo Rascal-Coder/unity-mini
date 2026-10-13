@@ -18,7 +18,7 @@ public static class ForestStageValidation {
         File.Delete(request);
         try{Run();}catch(Exception error){Directory.CreateDirectory("Docs/Previews");File.WriteAllText("Docs/Previews/forest-validation.txt",error.ToString());Debug.LogException(error);}
     }
-    [MenuItem("Dice Hero/Validate Forest Preview")]
+    [MenuItem("Expedition/Validate Forest Preview")]
     public static void Run() {
         if(EditorApplication.isPlayingOrWillChangePlaymode){Debug.LogWarning("Exit Play mode before forest preview validation.");return;}
         BattleProjectSetup.BakeStage();

@@ -1,4 +1,0 @@
-Static PASS: 4 groups; 16 anchors; rear props behind terrain; 3 Spine heroes; parallax coefficients verified.
-Grounding PASS: boot attachments stay on the floor across idle, run, attack and skill cycles for all 3 roles; shadows remain behind actors.
-Runtime PASS: three independent attackers; target damage; automatic next wave; pause freezes combat/camera; x2; restart; no dice UI; no runtime errors.
-Captured 1920x1080, 2400x1080, 1600x1200 using actual camera and HUD.

@@ -2,20 +2,11 @@ using System;
 using System.IO;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using Spine.Unity;
 
 public static class WardrobeProjectSetup {
-    [InitializeOnLoadMethod]
-    static void CreateOnFirstOpen() {
-        if (Application.isBatchMode || File.Exists("Assets/Scenes/HeroPreview.unity")) return;
-        EditorApplication.delayCall += () => {
-            if (EditorApplication.isPlayingOrWillChangePlaymode || File.Exists("Assets/Scenes/HeroPreview.unity")) return;
-            Create();
-        };
-    }
-    [MenuItem("Dice Hero/Create Preview Scene")]
+    [MenuItem("Expedition/Generate Hero Assets")]
     public static void Create() {
         AssetDatabase.Refresh();
         foreach (string path in new[] { "Assets/Hero/LC2_Hero.png", "Assets/Hero/LC2_Hero_2.png", "Assets/Hero/LC2_Hero_3.png" }) {
@@ -53,21 +44,12 @@ public static class WardrobeProjectSetup {
         else AssetDatabase.CreateAsset(data, "Assets/Generated/HeroSkeleton.asset");
         var skeleton = data.GetSkeletonData(false);
         if (skeleton == null) throw new Exception("Skeleton failed to load");
-        EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-        var camera = new GameObject("Preview Camera").AddComponent<Camera>();
-        camera.tag = "MainCamera"; camera.orthographic = true; camera.orthographicSize = 3;
-        camera.backgroundColor = new Color(.08f, .12f, .15f); camera.clearFlags = CameraClearFlags.SolidColor;
-        camera.transform.position = new Vector3(0, 1, -10);
-        new GameObject("Wardrobe").AddComponent<HeroWardrobe>().dataAsset = data;
-        Directory.CreateDirectory("Assets/Scenes");
-        EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene(), "Assets/Scenes/HeroPreview.unity");
-        EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene("Assets/Scenes/HeroPreview.unity", true) };
         PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
         PlayerSettings.defaultScreenWidth = 1280; PlayerSettings.defaultScreenHeight = 720;
-        PlayerSettings.companyName = "Dice Hero"; PlayerSettings.productName = "Spine Wardrobe";
+        PlayerSettings.companyName = "mahu"; PlayerSettings.productName = "Expedition";
         EditorSettings.defaultBehaviorMode = EditorBehaviorMode.Mode2D;
         AssetDatabase.SaveAssets();
         Directory.CreateDirectory("Logs");
-        File.WriteAllText("Logs/setup-result.txt", skeleton.Skins.Count + " skins; " + skeleton.Animations.Count + " animations; scene created.");
+        File.WriteAllText("Logs/setup-result.txt", skeleton.Skins.Count + " skins; " + skeleton.Animations.Count + " animations; hero assets generated.");
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public sealed class BattleHud : MonoBehaviour {
     public RectTransform Root;
-    public Text Target, Round, Damage, BattleState;
-    public Button PauseButton, SpeedButton, AudioButton, RestartButton;
+    public Text Title, Target, Round, Damage, BattleState;
+    public Button PauseButton, SpeedButton, AudioButton, RestartButton, PreviousMapButton, NextMapButton;
     public GameObject PauseOverlay;
     public Image Health;
     public readonly Image[] EnergyBars = new Image[3];
@@ -14,11 +14,13 @@ public sealed class BattleHud : MonoBehaviour {
     readonly Text[] energyText = new Text[3];
     Font font;
     Button resume;
+    string location = "魔法森林";
+    string mapProgress = "1/1";
     Rect lastSafe;
     int lastWidth, lastHeight;
     static readonly Color Ink = new Color(.025f, .07f, .095f, .92f);
     static readonly Color Gold = new Color(.88f, .76f, .45f);
-    public void Build(DiceBattle game) {
+    public void Build(PartyBattle game) {
         font = Resources.Load<Font>("Battle/Fonts/NotoSansCJKsc-Regular");
         if (font == null) font = Font.CreateDynamicFontFromOSFont(new[] { "Microsoft YaHei", "Arial" }, 24);
         var canvas = gameObject.AddComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.sortingOrder = 2000;
@@ -26,8 +28,10 @@ public sealed class BattleHud : MonoBehaviour {
         scaler.referenceResolution = new Vector2(1600, 900); scaler.matchWidthOrHeight = .5f;
         gameObject.AddComponent<GraphicRaycaster>(); Root = Rect("Safe Area", transform, Vector2.zero, Vector2.one); UpdateSafeArea();
         var title = Card(Root, "Training title", new Vector2(.02f, .89f), new Vector2(.305f, .98f));
-        Label(title, "三人小队 · 魔法森林", new Vector2(.045f, .38f), new Vector2(.98f, .95f), 27, Gold);
-        Round = Label(title, "训练场  /  第 1 轮", new Vector2(.045f, .06f), new Vector2(.98f, .4f), 18, new Color(.73f, .8f, .83f));
+        Title = Label(title, "三人小队 · 魔法森林", new Vector2(.045f, .38f), new Vector2(.98f, .95f), 27, Gold);
+        Round = Label(title, "魔法森林  1/25  /  第 1 轮", new Vector2(.045f, .06f), new Vector2(.98f, .4f), 18, new Color(.73f, .8f, .83f));
+        PreviousMapButton = ButtonAt(Root, "上一图", new Vector2(.025f, .828f), new Vector2(.115f, .882f), game.PreviousMap);
+        NextMapButton = ButtonAt(Root, "下一图", new Vector2(.12f, .828f), new Vector2(.21f, .882f), game.NextMap);
         var controls = Card(Root, "Battle controls", new Vector2(.355f, .908f), new Vector2(.68f, .976f));
         BattleState = Label(controls, "自动战斗", new Vector2(.03f, 0), new Vector2(.39f, 1), 25, Color.white);
         SpeedButton = ButtonAt(controls, "×1", new Vector2(.4f, .06f), new Vector2(.58f, .94f), game.ToggleSpeed);
@@ -64,8 +68,11 @@ public sealed class BattleHud : MonoBehaviour {
         PauseOverlay.SetActive(false);
         if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(PauseButton.gameObject);
     }
+    public void SetLocation(string name, int index, int count) {
+        location = name; mapProgress = index + "/" + count; if (Title != null) Title.text = "三人小队 · " + name;
+    }
     public void SetTarget(int wave, int health, int maxHealth, int total) {
-        Round.text = "训练场  /  第 " + wave + " 轮"; Target.text = "训练木桩  " + health + " / " + maxHealth;
+        Round.text = location + "  " + mapProgress + "  /  第 " + wave + " 轮"; Target.text = "训练木桩  " + health + " / " + maxHealth;
         Health.rectTransform.anchorMax = new Vector2(health / (float)maxHealth, 1); Damage.text = "训练伤害  " + total;
     }
     public void SetMember(int role, int health, int energy, string state) {

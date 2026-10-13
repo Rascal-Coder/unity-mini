@@ -48,14 +48,14 @@ public sealed class BattleGrounding : MonoBehaviour {
         float span = Mathf.Abs(left.x - right.x);
         ambient.transform.localPosition = new Vector3((left.x + right.x) * .5f, .015f, 0);
         SetSize(ambient, Mathf.Clamp(span + .48f, .7f, 1.05f), .23f);
-        UpdateContact(frontContact, left, a.size.x * Mathf.Abs(transform.localScale.x));
-        UpdateContact(backContact, right, b.size.x * Mathf.Abs(transform.localScale.x));
+        UpdateContact(frontContact, left, a.size.x * Mathf.Abs(transform.localScale.x), ambient.color);
+        UpdateContact(backContact, right, b.size.x * Mathf.Abs(transform.localScale.x), ambient.color);
     }
 
-    static void UpdateContact(SpriteRenderer contact, Vector3 sole, float bootWidth) {
+    static void UpdateContact(SpriteRenderer contact, Vector3 sole, float bootWidth, Color tint) {
         float lift = Mathf.Max(0, sole.y);
         // A raised boot loses its dark contact patch while the planted boot stays attached.
-        contact.color = new Color(.65f, .72f, .65f, Mathf.Lerp(1, .12f, Mathf.Clamp01(lift / .18f)));
+        contact.color = new Color(tint.r, tint.g, tint.b, Mathf.Lerp(1, .12f, Mathf.Clamp01(lift / .18f)));
         contact.transform.localPosition = new Vector3(sole.x, .008f, 0);
         SetSize(contact, Mathf.Clamp(bootWidth * 1.35f, .2f, .4f), .09f);
     }
